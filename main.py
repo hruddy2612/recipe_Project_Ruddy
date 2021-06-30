@@ -65,14 +65,14 @@ def leave_note(user_note):
         print("Eror. Your note was too long.")
 
 
-# image path that I want to import
-image = "/Users/heatherruddy/Downloads/HCI Python/HCI584 - lecture 02 - Visual Studio setup, working with git/Recipe_project_heather_ruddy/mushroom_burger.jpg"
+#image path that I want to import
+image = "/Users/heatherruddy/Downloads/HCI Python/Recipe Project/recipe_Project_Ruddy/mushroom_burger.jpg"
 #importing image function
 def plot_image(image):
     
-    img = mpimg.imread("/Users/heatherruddy/Downloads/HCI Python/HCI584 - lecture 02 - Visual Studio setup, working with git/Recipe_project_heather_ruddy/mushroom_burger.jpg")
+    img = mpimg.imread(image)
     imgplot = plt.imshow(img)
     plt.show()
 
-       
-plot_image(image)   
+  
+
