@@ -5,7 +5,7 @@ import time
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-df = pd.read_csv ("/Users/heatherruddy/Downloads/HCI Python/HCI584 - lecture 02 - Visual Studio setup, working with git/Recipe_project_heather_ruddy/recipe2.csv")
+df = pd.read_csv ("/Users/heatherruddy/Downloads/HCI Python/Recipe Project/recipe_Project_Ruddy/recipe2.csv")
 
 #print 5 rows of data
 df.head(5)
