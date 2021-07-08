@@ -7,12 +7,6 @@ import matplotlib.image as mpimg
 
 df = pd.read_csv ("/Users/heatherruddy/Downloads/HCI Python/Recipe Project/recipe_Project_Ruddy/recipe2.csv")
 
-#print 5 rows of data
-df.head(5)
-print(df)
-#print columns 
-print(df.columns)
-
 #is the recipe available
 def is_recipe_available(user_input,df):
     
@@ -35,15 +29,7 @@ def print_recipe(user_input, df):
     else:
 	    print(r.loc[0].tolist())
 
-#user input area for recipe they're searching
-user_input = input("Search Recipies \n")
-
-#print the recipe based on above user input, but
-#this does not work, I dont know what this error means
-is_recipe_available(user_input,df)
-
-#user leaves a recipe review
-
+#user leaves recipe review
 def leave_review(user_review):
     
     #if else loop for acceptable review length
@@ -51,9 +37,6 @@ def leave_review(user_review):
         print("Thank you for your review.")
     else: 
         print("Error. Your review exceeds the character limit.")
-
-#user input for leaving a review
-user_review = input("Leave a Review\n")
 
 #user adds a note to a recipe
 def leave_note(user_note):
@@ -63,19 +46,6 @@ def leave_note(user_note):
         print("Your note has been saved.")
     else:
         print("Eror. Your note was too long.")
-
-
-#image path that I want to import
-image = "/Users/heatherruddy/Downloads/HCI Python/Recipe Project/recipe_Project_Ruddy/mushroom_burger.jpg"
-#importing image function
-def plot_image(image):
-    
-    img = mpimg.imread(image)
-    imgplot = plt.imshow(img)
-    plt.show()
-
-
-#suggestions from prof
 
 #print entire recipe 
 def print_recipe(user_input, df):
@@ -91,29 +61,12 @@ def print_recipe(user_input, df):
     else:                       # It can then be up to the caller to print it out, or show it in a GUI, or whatever
 	    print(r.loc[0].tolist())# Basically it's more flexible b/c it lets the caller decide what to do
 
-
-# CH my version
-def get_recipe_(title_search, df):  # be more precise when naming your args. Input could be any number of things.
-    '''search title column in df for  user_input (string)
-    if found, return a 1 row data frame with all columns
-    otherwise returns None
-    Note: to make it easier, I convert the input into lowercase, as that seems to be the rule in your csv file DB
-    '''
-    lc = title_search.lower()  # lowercase search term
-
-    # Does search term exactly match a title in the DB?
-    r = df.loc[df["Recipe title"] == lc]  # returns empty df or df with one more rows
+#import an image for a recipe
+def plot_image(image):
     
-    #print(r) # Debug
-
-    if r.empty:
-	    return None
-    else:
-        # We have at least one hit
-        r.reset_index(drop=True, inplace=True) # reset index so we can grab the first row via row index = 0
-        return_row = r.loc[0] # could return the row directly but that way we can look at it in the debugger
-        return return_row 
-
+    img = mpimg.imread(image)
+    imgplot = plt.imshow(img)
+    plt.show()
 
 def return_best_match(search_term, word_list):
     '''Given a search term, which is the closest match from a list of strings?
@@ -133,5 +86,32 @@ def return_best_match(search_term, word_list):
         return None
     else:
         return best_match[1] # word with best metric (> 0.5)
+
+
+
+#Main Code 
+
+
+#print 5 rows of data
+df.head(5)
+print(df)
+#print columns 
+print(df.columns)
+
+#user input area for recipe they're searching
+user_input = input("Search Recipes \n")
+
+#print the recipe based on above user input, but
+#this does not work, I dont know what this error means
+is_recipe_available(user_input,df)
+
+
+#user input for leaving a review
+user_review = input("Leave a Review\n")
+
+#image path that I want to import
+image = "/Users/heatherruddy/Downloads/HCI Python/Recipe Project/recipe_Project_Ruddy/mushroom_burger.jpg"
+
+
 
 
