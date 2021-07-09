@@ -15,14 +15,33 @@ import tkinter.font as tkFont
 
 
 
-#import recipe to pandas
-root = Tk()
-root.geometry('800x500')
-root.title('Camping Recipe App')
+#main window size and title
+main_window = Tk()
+main_window.geometry('800x500')
+main_window.title('Camping Recipe App')
+
+#fontsize
+fontStyle = tkFont.Font(family="Lucida Grande", size=10)
+fontStyle2 = tkFont.Font(size = 10)
+
+#main_window is the parent window
+fram = Frame(main_window)
+
+#adding label to search box
+Label(fram,text='Search Recipe: ', font = fontStyle).pack(side=LEFT)
 
 
+#adding of single line text box for search box
+edit = Entry(fram)
+ 
+#positioning of search text box
+edit.pack(side=LEFT)
 
+#adding of search button
+butt = Button(fram, text='Search') 
+butt.pack(side=RIGHT)
+fram.pack(side=LEFT)
 #keeps the app running
-root.mainloop()
+main_window.mainloop()
 
 
