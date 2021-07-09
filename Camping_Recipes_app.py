@@ -20,6 +20,8 @@ main_window = Tk()
 main_window.geometry('800x500')
 main_window.title('Camping Recipe App')
 
+
+
 #fontsize
 fontStyle = tkFont.Font(family="Lucida Grande", size=10)
 fontStyle2 = tkFont.Font(size = 10)
@@ -34,6 +36,9 @@ Label(fram,text='Search Recipe: ', font = fontStyle).pack(side=LEFT)
 #adding of single line text box for search box
 edit = Entry(fram)
  
+#Put 'Search Recipe' inside search box
+#edit.insert(0, "Find a Recipe:") 
+
 #positioning of search text box
 edit.pack(side=LEFT)
 
