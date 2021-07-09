@@ -90,7 +90,33 @@ def find_similar_recipe(user_input):
     #one result per title will print out           
     return np.unique(recipes)
 
+# function that asks for user input and prints recipes
 
+def print_recipe():
+    
+    #get the user input
+    user_input = input('Type your recipe\n\n')
+
+    
+    #check if its available
+    available_recipes = find_similar_recipe(user_input)
+    
+    #if recipe is available, print it
+    if available_recipes is not None:
+        print('\n\nAvailabel recipes')
+        print('------------')
+        
+        for r in available_recipes:
+            print(r)
+    
+    else:
+        print('None available')
+    
+    
+    return
+
+#run the program
+print_recipe()
 
 
 
