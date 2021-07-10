@@ -13,7 +13,15 @@ import os
 import tkinter.font as tkFont
 
 
+#get current working directory
+working_directory = os.getcwd()
 
+#import the pandas dataframe
+df = pd.read_csv(working_directory + '//recipe2.csv')
+
+#get the list of names in the csv_file
+#print the column titles as a list
+col_list = df.columns
 
 #main window size and title
 main_window = Tk()
@@ -30,7 +38,7 @@ fontStyle2 = tkFont.Font(size = 10)
 fram = Frame(main_window)
 
 #adding label to search box
-Label(fram,text='Search Recipe: ', font = fontStyle).pack(side=LEFT)
+Label(fram,text='Search Recipes: ', font = fontStyle).pack(side=LEFT)
 
 
 #adding of single line text box for search box
