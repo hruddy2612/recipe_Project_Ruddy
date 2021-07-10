@@ -50,6 +50,17 @@ edit = Entry(fram)
 #positioning of search text box
 edit.pack(side=LEFT)
 
+
+#for directions
+fram3 = Frame(main_window)
+fram3.place(relx = 0.4, rely = 0.6)
+lbl2 = Label(fram3, font = fontStyle2)
+
+#for ingredients
+fram4 = Frame(main_window)
+fram4.place(relx = 0.4, rely = 0.2)
+lbl3 = Label(fram4, font = fontStyle2)
+
 #adding of search button
 butt = Button(fram, text='Search') 
 butt.pack(side=RIGHT)
