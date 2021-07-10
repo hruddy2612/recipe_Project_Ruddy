@@ -1,5 +1,5 @@
-Recipe title,Ingredients,Directions,Prep time,Cook time,Serves #
-breakfast sandwich,"1/2 lb sausage, 4 eggs, 4 English muffins, 4 slices cheddar cheese, 1 TBS butter, salt and pepper to taste, 1 avocado","At Camp:
+Recipe title,Ingredients,Directions,Prep time,Cook time,Serves #,Picture Name
+breakfast sandwich,"1/2 lb sausage, 4 eggs, 4 English muffins, 4 slices cheddar cheese, 1 TBS butter, salt and pepper to taste, 1 avocado","At Camp
 
 1. Slice avocado and form the sausages into patties about 4 inches wide, 1/4 inch thick. Sausage can be cooked ahead of time at home, or cooked in a skillet at camp. 
 
@@ -12,7 +12,7 @@ breakfast sandwich,"1/2 lb sausage, 4 eggs, 4 English muffins, 4 slices cheddar 
 5. Assemble sandwiches by buttering both sides of English muffin, top with sausage patty, avocado, eggs and slice of cheddar cheese. 
 
 Side suggestions: 
-Mixed fruit, homestyle potatoes",10,15,4
+Mixed fruit, homestyle potatoes",10,15,4,break_sand.png
 mushroom burgers,"Burger ingredients:
 3 tbsp olive oil
 1 medium onion (chopped)
@@ -31,7 +31,7 @@ parsley to garnish
 
 Other Ingredients:
 4 onion buns
-Desired burger toppings: lettuce, tomato, red onion, avocado, Swiss cheese, condiments","At Home:
+Desired burger toppings: lettuce, tomato, red onion, avocado, Swiss cheese, condiments","At home:
 
 1. In a large skillet, sauté the onion in olive oil on medium-low heat for about 7 minutes. 
 
@@ -55,7 +55,7 @@ At Camp:
 
 5. To assemble, place burgers on onion buns and add desired toppings/condiments
 
-6. Serve with a side of mac and cheese, fire roasted corn, or baked beans",150,10,4
+6. Serve with a side of mac and cheese, fire roasted corn, or baked beans",150,10,4,mushroom_burger.png
 fish tacos,"Spice Rub:
 
 1 1/2 teaspoon chili powder
@@ -84,7 +84,7 @@ Other:
 Avocado slices
 Cilantro sprigs 
 Queso fresco cheese
-Cilantro lime dressing, any desired brand (optional)","At Camp:
+Cilantro lime dressing, any desired brand (optional)","At Camp
 
 1. In a small bowl, stir fish rub spices together. Sprinkle all sides of fish lightly with the spice rub (you most likely will not need all). Set aside.
 
@@ -99,8 +99,8 @@ Cilantro lime dressing, any desired brand (optional)","At Camp:
 6. Assemble tacos by placing fish in the tortillas, top with cabbage slaw, cheese, avocado slice, and optional cilantro dressing.  Garnish with lime and cilantro.
 
 Side Suggestions: 
-Rice or beans",20,8,4
-s’mores,"Essential Ingredients:
+Rice or beans",20,8,4,F_Taco.png
+smores,"Essential Ingredients:
 1 Box of graham crackers
 1 Bag of marshmallows
 Chocolate bar
@@ -109,7 +109,7 @@ Roasting sticks
 Optional Toppings:
 Reese’s peanut butter cups
 1 jar Nutella
-1 sliced banana","At Camp: 
+1 sliced banana","At Camp:
 1. Prep s’more. Break graham cracker in half and put desired toppings on one cracker. 
 
 2. Roast marshmallow
@@ -123,7 +123,7 @@ Banana Nutella
 Combine graham cracker, roasted marshmallow, Nutella spread, and sliced bananas
 
 Peanut Butter Cup
-Combine graham cracker, roasted marshmallow, and a peanut butter cup",5,5,6
+Combine graham cracker, roasted marshmallow, and a peanut butter cup",5,5,6,smore.png
 kale avocado sandwich,"2 leaves of kale
 Grated zest of half a small lemon
 Juice of 1 small lemon
@@ -131,11 +131,8 @@ Juice of 1 small lemon
 2 teaspoons extra-virgin olive oil
 Kosher salt and freshly ground black pepper to taste
 2 sturdy sandwich rolls
-1 avocado","At Home or Camp:
- 1. Tear kale into small pieces and place in a medium bowl 
-
-2. Add the lemon zest and juice, parmesan, and oil. Message to coat the kale. Season with salt and pepper to taste
-
-3.Smash one half of the avocado onto both sides of each sandwich roll. Top one side of the roll with the kale mixture and cover with the other side of the roll.
-
-4. If made at home, store in airtight container and keep chilled. Enjoy at camp or on the trail.",5,0,2
+1 avocado","At home or at camp:
+Tear kale into small pieces and place in a medium bowl 
+Add the lemon zest and juice, parmesan, and oil. Message to coat the kale. Season with salt and pepper to taste
+Smash one half of the avocado onto both sides of each sandwich roll. Top one side of the roll with the kale mixture and cover with the other side of the roll.
+If made at home, store in airtight container and keep chilled. Enjoy at camp or on the trail.",5,0,2,ka_sand.png
