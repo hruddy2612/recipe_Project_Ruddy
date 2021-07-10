@@ -8,47 +8,6 @@ import time
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-#import CSV file to pandas (make sure excell is in csv format)
-df = pd.read_csv ("/Users/heatherruddy/Downloads/HCI Python/Recipe Project/recipe_Project_Ruddy/recipe2.csv")
-
-
-#print 5 rows of data
-df.head(5)
-print(df)
-
-#print columns 
-col_list = df.columns
-print(col_list)
-
-#print a row
-df.loc[3]
-
-
-
-'''
-#is the recipe available
-def is_recipe_available(user_input,df):
-    
-    recipe_list = df["Recipe title"]
-    
-    #if else loop for if a recipe is available
-    if user_input in recipe_list:
-        print("Recipe is available")
-        
-    else:
-        print("Recpie is not available")
-'''
-'''
-#print entire recipe 
-def print_recipe(user_input, df):
-    r = df.loc[df["Recipe title"] == user_input]
-    r.reset_index(drop=True, inplace=True)
-    print(r) # Debug
-    if r.empty:
-	    print("Not found")
-    else:
-	    print(r.loc[0].tolist())
-'''
 
 
 #prints directions line by line
@@ -119,6 +78,93 @@ def print_recipe():
 print_recipe()
 
 
+# Main
+
+#import CSV file to pandas (make sure excell is in csv format)
+df = pd.read_csv ("/Users/heatherruddy/Downloads/HCI Python/Recipe Project/recipe_Project_Ruddy/recipe2.csv")
+
+#print 5 rows of data
+df.head(5)
+print(df)
+
+#print columns 
+col_list = df.columns
+print(col_list)
+
+#print a row
+df.loc[3]
+
+
+while True:
+
+    # Show all stored recipe titles to user:
+    titles = list(df["Recipe title"])
+    print("Available recipes:")
+    for t in titles:
+        print(t)
+    print()
+
+    #user input area for recipe they're searching
+    user_input = input("Search Recipies by Title\n")
+
+    # This is a more coplex version of your is_recipe_available() if it would return True/False
+    best_match = return_best_match(user_input, titles)
+    if best_match == None:
+        print(user_input, "not found, try again") 
+        continue
+    else:
+        print("match found:", best_match)
+        match_df = get_recipe_(best_match, df) # as we've pre-checked that we have a match, this should never return an empty df
+        #print(match_df)  # Not super clean but at least we retain the column headings
+        # in the GUI, this would end up in different areas/fields/boxes
+        for s in list(match_df): # list of values
+            print(s)
+
+        # images: 
+        # I suggest having a img folder with a jpg for each recipe, each with the title:
+        # I would remove spaces or ` to get a gurateed valid file name 
+        # example: "img/mushroomburger.jpg"
+        #          "img/smores.jpg"
+        #          "img/fishtacos.jpg"
+        s = best_match.replace(" ","") # remove spaces
+        s = s.replace("'", "") # remove single quote
+        # etc. for all punctation like chars
+        image_path = "img/" + s + ".jpg"
+
+        if exists(image_path):  # do we have this image?
+            plot_image(image_path)
+        else:
+            print(image_path, "not found - skipping")
+
+        break 
+
+
+
+'''
+#is the recipe available
+def is_recipe_available(user_input,df):
+    
+    recipe_list = df["Recipe title"]
+    
+    #if else loop for if a recipe is available
+    if user_input in recipe_list:
+        print("Recipe is available")
+        
+    else:
+        print("Recpie is not available")
+'''
+'''
+#print entire recipe 
+def print_recipe(user_input, df):
+    r = df.loc[df["Recipe title"] == user_input]
+    r.reset_index(drop=True, inplace=True)
+    print(r) # Debug
+    if r.empty:
+	    print("Not found")
+    else:
+	    print(r.loc[0].tolist())
+'''
+
 
 
 '''#user leaves recipe review
@@ -169,10 +215,5 @@ def plot_image(image):
         return best_match[1] # word with best metric (> 0.5)
 '''
  
-
-
-
-
-
 
 
