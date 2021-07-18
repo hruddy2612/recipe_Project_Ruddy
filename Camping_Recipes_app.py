@@ -12,7 +12,7 @@ import matplotlib.image as mpimg
 import os
 import tkinter.font as tkFont
 
-#hello
+from PIL import ImageTk, Image
 
 #get current working directory
 working_directory = os.getcwd()
@@ -20,58 +20,18 @@ working_directory = os.getcwd()
 #import the pandas dataframe
 df = pd.read_csv(working_directory + '//recipe2.csv')
 
-#get the list of names in the csv_file
-#print the column titles as a list
-col_list = df.columns
 
-#main window size and title
-main_window = Tk()
-main_window.geometry('800x500')
-main_window.title('Camping Recipe App')
-
-
-
-#fontsize
-fontStyle = tkFont.Font(family="Lucida Grande", size=10)
-fontStyle2 = tkFont.Font(size = 10)
-
-#main_window is the parent window
-fram = Frame(main_window)
-
-#adding label to search box
-Label(fram,text='Search Recipes: ', font = fontStyle).pack(side=LEFT)
-
-#make s a string
-entered_recipe = StringVar()
-
-#adding of single line text box for search box
-edit = Entry(fram, textvariable = entered_recipe)
- 
-#Put 'Search Recipe' inside search box
-'''edit.insert(0, "Find a Recipe:") '''
-
-
-#positioning of search text box
-edit.pack(side=LEFT)
-
-#for directions
-fram3 = Frame(main_window)
-fram3.place(relx = 0.4, rely = 0.6)
-lbl2 = Label(fram3, font = fontStyle2)
-
-#for ingredients
-fram4 = Frame(main_window)
-fram4.place(relx = 0.4, rely = 0.2)
-lbl3 = Label(fram4, font = fontStyle2)
-
+#Functions#
 
 
 def print_similar_recipes():
     
-    #new label
-    fram2 = Frame(main_window)
-    fram2.place(relx = 0, rely = 0.6)
-    lbl = Listbox(fram2, width = 40, height = 10)
+    #frame2, search results list box position on page
+    frame2 = Frame(main_window) 
+    frame2.place(x = 625, y = 35)
+
+    #recipe search result list box size
+    search_results= Listbox(frame2, width = 50, height = 10)
     
     #get recipe name entered
     recipe = entered_recipe.get()
@@ -79,12 +39,11 @@ def print_similar_recipes():
     #store similar recipes to what user inputs
     recipes = []    
     
-    #split the user input
+    #get user input and split words of input
     inp = recipe.lower().split()
     
-    #make the recipe name lowercase
+    #get recipe from CSV, make the recipe name lowercase
     recipe_list = df['Recipe title'].tolist()
-    
     recipe_list_adjusted = [''.join(s.split()).lower() for s in recipe_list]
     
     #find if the any words in the user input matches the recipe list
@@ -103,29 +62,28 @@ def print_similar_recipes():
     if len(un_recipes) > 0:
         
         for i,r in enumerate(un_recipes):
-            #create a frame
-            #lbl = Label(fram2, text = str(r), font = fontStyle)
-            lbl.insert(i+1, str(r))
-            lbl.pack()   
+            
+            search_results.insert(i+1, str(r))
+            search_results.pack()   
                        
         
     else:
-        #create a frame
+        
         show = "Recipe Not Found. Type a different recipe"
-        lbl.insert(1, str(show))
-        lbl.pack()
+        search_results.insert(1, str(show))
+        search_results.pack()
     
-
 
 
   #print stuff if selected
     def show_selected():
         
         #get the selected name
-        selected = lbl.get(ANCHOR)
+        selected = search_results.get(ANCHOR)
         try:
             #get the dataframe index
             idx = df[df['Recipe title'] == selected].index[0]
+
 
             #directions
             directions = df['Directions'][idx]
@@ -139,12 +97,7 @@ def print_similar_recipes():
             lbl3.config(text = col2 + ing, wraplength = 500)
             lbl3.pack()
             
-            #image for recipe
-            #fram4 = Frame(root)
-            #fram4.pack(side = TOP)
-            #img = PhotoImage(file = working_directory + '//' + 'smore.png')
-
-            #Label(root, image=img).pack()
+        
         
         except:
             
@@ -155,12 +108,56 @@ def print_similar_recipes():
             lbl3.pack()
 
     
-    Button(fram2, text = 'Show recipe', command = show_selected).pack(side = BOTTOM)  
+    Button(frame2, text = 'Show recipe', command = show_selected).pack(side = BOTTOM)  
 
-#adding of search button
-butt = Button(fram, text='Search', command = print_similar_recipes) 
-butt.pack(side=RIGHT)
-fram.pack(side=LEFT)
+#main window size and title
+main_window = Tk()
+main_window.geometry('800x500')
+
+#title of main window
+main_window.title('Camping Recipe App')
+
+#Frame 1, Search label textbox and button
+frame1 = Frame(main_window)
+
+#adding label to search box
+Label(frame1,text='Search Recipes: ', font = (None, 10)).pack(side = LEFT)
+
+#get the entry 
+entered_recipe = StringVar()
+
+#text box in frame1 next to search recipe (where recipe name is typed)
+enter_recipe = Entry(frame1, textvariable = entered_recipe)
+
+#position text box
+enter_recipe.pack (side = LEFT)
+
+#search button button
+search_button = Button(frame1, text ='Search', command = print_similar_recipes) 
+search_button.pack(side=RIGHT)
+frame1.pack(side=LEFT)
+
+#fontsize
+fontStyle = tkFont.Font(family="Lucida Grande", size=10)
+fontStyle2 = tkFont.Font(size = 10)
+
+
+ 
+#Put 'Search Recipe' inside search box
+'''edit.insert(0, "Find a Recipe:") '''
+
+
+#for directions
+fram3 = Frame(main_window)
+fram3.place(relx = 0.4, rely = 0.6)
+lbl2 = Label(fram3, font = fontStyle2)
+
+#for ingredients
+fram4 = Frame(main_window)
+fram4.place(relx = 0.4, rely = 0.2)
+lbl3 = Label(fram4, font = fontStyle2)
+
+
 
 #keeps the app running
 main_window.mainloop()

@@ -1,5 +1,11 @@
-Recipe title,Ingredients,Directions,Prep time,Cook time,Serves #,Picture Name
-breakfast sandwich,"1/2 lb sausage, 4 eggs, 4 English muffins, 4 slices cheddar cheese, 1 TBS butter, salt and pepper to taste, 1 avocado","At Camp
+Recipe title,Ingredients,Directions,Prep time,Cook time,Serves,Picture Name
+breakfast sandwich,"1/2 lb sausage
+4 eggs
+4 English muffins
+4 slices cheddar cheese
+1 TBS butter
+salt and pepper to taste
+1 avocado","At Camp
 
 1. Slice avocado and form the sausages into patties about 4 inches wide, 1/4 inch thick. Sausage can be cooked ahead of time at home, or cooked in a skillet at camp. 
 
@@ -12,7 +18,79 @@ breakfast sandwich,"1/2 lb sausage, 4 eggs, 4 English muffins, 4 slices cheddar 
 5. Assemble sandwiches by buttering both sides of English muffin, top with sausage patty, avocado, eggs and slice of cheddar cheese. 
 
 Side suggestions: 
-Mixed fruit, homestyle potatoes",10,15,4,break_sand.png
+Mixed fruit, homestyle potatoes",10,15,4,break_sand.jpg
+strawberry french toast,"1 lb strawberries
+2 tablespoons sugar
+4 eggs
+1 cup milk
+1 tablespoon sugar
+1 teaspoon cinnamon
+12 slices Texas toast
+Butter
+1 cup mascarpone cheese
+Maple syrup","Quarter the strawberries and place in a bowl with 2 tablespoons sugar. Stir to coat. Let sit at least 10 minutes, until the berries begin to turn syrupy. 
+In a separate bowl, thoroughly beat the eggs with the milk, a tablespoon of sugar, and cinnamon. 
+In a nonstick pan over medium heat, warm a tablespoon of butter. 
+Dip the bread into the egg/milk mixture, letting the bread absorb the liquid for a few seconds, then flipping and soaking the other side for a few seconds. Lift out of the mixture and let the excess drip off. 
+Place in the pan. Repeat with a second (and third, if your pan allows it) piece of bread. 
+Once the toast is golden on one side (about 3 minutes), flip and cook the other side for an additional 2 minutes or so. Remove and set aside.
+
+Heat the second tablespoon of butter and repeat the process until all the toast is cooked. 
+To serve, spread mascarpone cheese over the top of a slice of toast, spoon some of the berries and their syrup on, then repeat with another slice to “stuff” the French toast. 
+Drizzle some maple syrup over the top and enjoy!",5,25,6,f_toast.jpg
+shrimp boil packets,"1 ear of corn, cut into 8 pieces
+1 medium zucchini, sliced thick
+4 cloves garlic, minced
+1/2 lb uncooked shrimp
+2 andouille sausage
+1 teaspoon Old Bay Seasoning
+1 teaspoon Cajun seasoning
+4 tablespoons butter
+Fresh parsley, chopped","Tear an 18” piece of heavy-duty foil for each packet, along with a 16” sheet of parchment paper for each. Layer the parchment paper on top of the foil. 
+Divide the corn, zucchini, minced garlic, shrimp, spices, and butter between the two sheets of foil.  
+To form the packets, bring one of the short edges of the foil to meet the other, then crimp around all edges to seal. 
+Cook the packets on a grill (or the grill grate over your campfire) for 8 minutes, flipping occasionally. 
+Remove from the grill and let cool slightly. Open the packets carefully – they will be full of hot steam. Top with fresh parsley and enjoy. ",5,10,2,shrimp.jpg
+chicken and vegetable kebobs,"For the Marinade
+¼ cup olive oil
+¼ cup chopped basil
+¼ cup chopped parsley
+2 cloves garlic, minced
+1 lemon, juiced
+1 teaspoon salt
+
+To Build the Skewers
+½ lb chicken (boneless, skinless thighs work best), cut into 1 inch pieces
+8 oz whole mushrooms, stems removed
+8 oz cherry tomatoes
+2-3 green onions, cut into 1 inch pieces
+","Combine the ingredients for the marinade in a large bowl or ziplock bag. Add the chicken pieces and thoroughly coat. Cover the bowl or seal the bag and marinate for at least 30 minutes, up to two hours 
+Fire up your grill or get your campfire going. You’ll be cooking the kebabs over medium-high to high heat. 
+Build the kabobs by threading the chicken and vegetables onto your skewers. 
+Grill the kabobs over medium-high to high heat, turning occasionally so they cook evenly until the chicken is cooked through - about 10 minutes total. 
+Remove from the grill and enjoy!",5,10,6,chick_keb.jpg
+chili,"1 medium onion, chopped
+1 tablespoon olive oil
+14 oz can black beans, drained
+14 oz can red kidney beans, drained
+14 oz can diced tomatoes, with their juices
+1 can chipotle peppers in adobo sauce, seeds removed (see below)
+12 oz can beer, preferably lager
+2 teaspoons sea salt
+1 teaspoon garlic powder
+1 teaspoon cumin
+","Begin by prepping the chipotles. Most of the heat in the peppers are housed in the seeds and ribs, so we strongly recommend scraping out all of the seeds before adding the peppers to the chili, especially if using the entire can. Using a fork, remove the desired number of peppers from the can. Reserve the adobo sauce. Slice them open, and then using the back of your knife, scrape out and discard the seeds & ribs. Roughly chop the peppers and set them aside. 
+In a large dutch oven, heat the olive oil over medium heat until shimmering. Add the onions and saute until they begin to soften and turn translucent. Add the drained kidney and black beans, tomatoes and their juices, chopped chipotles and the adobo sauce, beer, salt and spices. Stir to combine. 
+Cook the chili until thickened to your liking, about 20 minutes was perfect for us. Serve immediately with your choice of toppings (cheese, avocado, green onions, etc) and cornbread on the side! 
+",10,25,4,chili.jpg
+grilled peaches,"2 large ripe peaches
+1 tablespoon brown sugar
+1 (5.3oz) container thick vanilla yogurt, such as Greek yogurt
+honey
+3-4 mint leaves, minced","Slice the peaches in half and remove the pits. Sprinkle the brown sugar over the cut sides. 
+Place the peaches cut side down onto the grill over low to medium-low heat and cook until the peaches are warm and beginning to soften, about 8 minutes, flipping halfway. 
+Remove from grill and top each peach half with vanilla yogurt, a drizzle of honey, and a sprinkle of mint. Enjoy! 
+",2,10,4,peach.jpg
 mushroom burgers,"Burger ingredients:
 3 tbsp olive oil
 1 medium onion (chopped)
@@ -55,7 +133,7 @@ At Camp:
 
 5. To assemble, place burgers on onion buns and add desired toppings/condiments
 
-6. Serve with a side of mac and cheese, fire roasted corn, or baked beans",150,10,4,mushroom_burger.png
+6. Serve with a side of mac and cheese, fire roasted corn, or baked beans",150,10,4,mush_burg.jpg
 fish tacos,"Spice Rub:
 
 1 1/2 teaspoon chili powder
@@ -99,7 +177,7 @@ Cilantro lime dressing, any desired brand (optional)","At Camp
 6. Assemble tacos by placing fish in the tortillas, top with cabbage slaw, cheese, avocado slice, and optional cilantro dressing.  Garnish with lime and cilantro.
 
 Side Suggestions: 
-Rice or beans",20,8,4,F_Taco.png
+Rice or beans",20,8,4,f_taco.jpg
 smores,"Essential Ingredients:
 1 Box of graham crackers
 1 Bag of marshmallows
@@ -123,7 +201,7 @@ Banana Nutella
 Combine graham cracker, roasted marshmallow, Nutella spread, and sliced bananas
 
 Peanut Butter Cup
-Combine graham cracker, roasted marshmallow, and a peanut butter cup",5,5,6,smore.png
+Combine graham cracker, roasted marshmallow, and a peanut butter cup",5,5,6,smore.jpg
 kale avocado sandwich,"2 leaves of kale
 Grated zest of half a small lemon
 Juice of 1 small lemon
@@ -135,4 +213,4 @@ Kosher salt and freshly ground black pepper to taste
 Tear kale into small pieces and place in a medium bowl 
 Add the lemon zest and juice, parmesan, and oil. Message to coat the kale. Season with salt and pepper to taste
 Smash one half of the avocado onto both sides of each sandwich roll. Top one side of the roll with the kale mixture and cover with the other side of the roll.
-If made at home, store in airtight container and keep chilled. Enjoy at camp or on the trail.",5,0,2,ka_sand.png
+If made at home, store in airtight container and keep chilled. Enjoy at camp or on the trail.",5,0,2,kale_sand.jpg
