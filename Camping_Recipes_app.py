@@ -110,12 +110,17 @@ def print_similar_recipes():
     
     Button(frame2, text = 'Show recipe', command = show_selected).pack(side = BOTTOM)  
 
-#main window size and title
+
+#create window
 main_window = Tk()
-main_window.geometry('800x500')
 
 #title of main window
 main_window.title('Camping Recipe App')
+
+#window state as zoomed 
+main_window.state('zoomed')
+#main_window.geometry('800x500')
+
 
 #Frame 1, Search label textbox and button
 frame1 = Frame(main_window)
@@ -137,25 +142,29 @@ search_button = Button(frame1, text ='Search', command = print_similar_recipes)
 search_button.pack(side=RIGHT)
 frame1.pack(side=LEFT)
 
+#for the title and picture
+frame3 = Frame(main_window)
+frame3.place(x = 200, y = 350)
+
+#for ingredients, directions, cook time information
+frame4 = Frame(main_window)
+frame4.place(x = 800, y = 250)
+
+
+
+
+
 #fontsize
 fontStyle = tkFont.Font(family="Lucida Grande", size=10)
 fontStyle2 = tkFont.Font(size = 10)
-
-
  
 #Put 'Search Recipe' inside search box
 '''edit.insert(0, "Find a Recipe:") '''
 
 
-#for directions
-fram3 = Frame(main_window)
-fram3.place(relx = 0.4, rely = 0.6)
-lbl2 = Label(fram3, font = fontStyle2)
 
-#for ingredients
-fram4 = Frame(main_window)
-fram4.place(relx = 0.4, rely = 0.2)
-lbl3 = Label(fram4, font = fontStyle2)
+
+
 
 
 
