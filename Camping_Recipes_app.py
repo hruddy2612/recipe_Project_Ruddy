@@ -36,25 +36,31 @@ def print_similar_recipes():
     #get recipe name entered
     recipe = entered_recipe.get()
     
-    #store similar recipes to what user inputs
-    recipes = []    
+
     
     #get user input and split words of input
     inp = recipe.lower().split()
     
     #get recipe from CSV, make the recipe name lowercase
     recipe_list = df['Recipe title'].tolist()
-    recipe_list_adjusted = [''.join(s.split()).lower() for s in recipe_list]
+    #recipe_list_adjusted = [''.join(s.split()).lower() for s in recipe_list] # we'll do the inside the function
     
-    #find if the any words in the user input matches the recipe list
-    for i in inp:
-        
-        for r, recipe in enumerate(recipe_list_adjusted):
-            
-            if i in recipe:
-                
-                recipes.append(recipe_list[r])
+ 
+
+    def get_similar(inp, recipe_list):
+        #store similar recipes to what user inputs
+        recipes = []   
+
+        # find if the any words in the user input matches the recipe list
+        for i in inp:
+            for recipe in recipe_list:
+                recipe_lower = recipe.lower()
+                if i in recipe.lower():
+                    recipes.append(recipe)
+        return recipes
     
+    recipes = get_similar(inp, recipe_list)
+
     #get unique recipes
     un_recipes = np.unique(recipes)
     
@@ -147,6 +153,38 @@ fontStyle2 = tkFont.Font(size = 10)
 '''edit.insert(0, "Find a Recipe:") '''
 
 
+
+# CH use Text widget and insert image from file
+
+# define new frame and put text area and scroll bar in it
+textframe=Frame(main_window)
+textframe.pack()  # this is bad placement, just for a test ....  
+
+# create and pack the text area
+text=Text(textframe, height=20, width=50,wrap=WORD)
+text.pack(side=LEFT, fill=BOTH)
+
+# yview callback gets called when the scroll bar or its arrows are moved
+text_scroll=Scrollbar(textframe, command=text.yview)
+text_scroll.pack(side=RIGHT,fill=Y)
+
+# this connects changes in the scroll bar to changing the text area
+# i.e. the text area will show a smaller window into the full text
+text.configure(yscrollcommand=text_scroll.set)
+
+text.insert(END, "-----------------------------------------\nHere is some text with an image\n")
+
+from PIL import Image, ImageTk
+img_PIL = Image.open("chili.jpg") # read in image into PIL
+
+# resize to fit into a box
+box_size = (300, 300)
+img_PIL.thumbnail(box_size)
+
+img = ImageTk.PhotoImage(img_PIL) # convert into Tk specific image object
+text.image_create(END, image=img) # insert image (inside box)
+text.insert(END, "\naaaaaaaaaaa\nbbbbbbbbbbbbbbb\nccccccccccccc\n") # test scroll bar
+
 #for directions
 fram3 = Frame(main_window)
 fram3.place(relx = 0.4, rely = 0.6)
@@ -156,7 +194,6 @@ lbl2 = Label(fram3, font = fontStyle2)
 fram4 = Frame(main_window)
 fram4.place(relx = 0.4, rely = 0.2)
 lbl3 = Label(fram4, font = fontStyle2)
-
 
 
 #keeps the app running
