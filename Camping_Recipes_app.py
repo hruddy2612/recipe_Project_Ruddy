@@ -80,50 +80,101 @@ def print_similar_recipes():
         
         #get the selected name
         selected = search_results.get(ANCHOR)
+
+        #clear the everything
+        label_title_name.config(text = '')
+        label_title_name.pack()
+        label_content.config(text = '')
+        label_content.pack()
+
         try:
             #get the dataframe index
             idx = df[df['Recipe title'] == selected].index[0]
+            
+            #print name of recipe            
+            label_name.config(text = str(selected), font = (None, 20))
+            label_name.pack(side = TOP)
+
+            #picture
+            pic = df['Picture Name'][idx]
+            
+            im = Image.open(working_directory + '//' + str(pic))
+            
+            im = im.resize((300, 200))
+            
+            main_window.im = ImageTk.PhotoImage(im)
+            
+            label_pic.configure(image = main_window.im)
+            label_pic.pack(pady = 20, side = TOP)
+            
+            def show_ingredients():
+
+                #selected = list_box.get(ANCHOR)    
+
+                #get the dataframe index
+                idx = df[df['Recipe title'] == selected].index[0]
+
+                #ingredients
+                ing = df['Ingredients'][idx]
+                label_title_name.config(text = 'INGREDIENTS', font = (None, 15))
+                label_title_name.pack(side = TOP)
+                label_content.config(text = ing, wraplength = 500, anchor = 'w', font = (None, 10))
+                label_content.pack(side = TOP, pady = 20, fill = 'both')
 
 
-            #directions
-            directions = df['Directions'][idx]
-            col1 = 'DIRECTIONS:\n'            
-            lbl2.config(text = col1 + directions, wraplength = 500)
-            lbl2.pack()
+            def show_directions():
+
+                #selected = list_box.get(ANCHOR)
+                idx = df[df['Recipe title'] == selected].index[0]
+
+                #ingredients
+                directions = df['Directions'][idx]
+                label_title_name.config(text = 'DIRECTIONS', font = (None, 15), wraplength = 500)
+                label_title_name.pack(pady = 5)
+                label_content.config(text = directions, wraplength = 500, anchor = 'w', font = (None, 10))
+                label_content.pack(pady = 5)
+
+
+               
+            #ingredient button    
+            but_ing.config(text = 'Ingredients', height = 1, width = 7, command = show_ingredients)
+            but_ing.pack(side = TOP)
+
+            #directions button
+            but_dir.config(text = 'Directions', height = 1, width = 7, command = show_directions)
+            but_dir.pack(side = TOP)
+
             
-            #ingredients
-            ing = df['Ingredients'][idx]
-            col2 = 'INGREDIENTS:\n'
-            lbl3.config(text = col2 + ing, wraplength = 500)
-            lbl3.pack()
-            
-        
-        
+
         except:
+            #get rid of labels
+            label_name.config(text = '')
+            label_name.pack()
             
-            lbl2.config(text = "Recipe Not Found. Type a different recipe")
-            lbl2.pack()
+            #get rid of buttons
+            but_ing.forget()
+            but_dir.forget()
             
-            lbl3.config(text = '')
-            lbl3.pack()
-
+            #clear the everything
+            label_title_name.config(text = '')
+            label_title_name.pack()
+            label_content.config(text = '')
+            label_content.pack()
+            
+            label_pic.forget()            
     
     Button(frame2, text = 'Show recipe', command = show_selected).pack(side = BOTTOM)  
 
-
-#create window
+#main window size and title
 main_window = Tk()
+main_window.geometry('800x500')
 
 #title of main window
 main_window.title('Camping Recipe App')
 
-#window state as zoomed 
-main_window.state('zoomed')
-#main_window.geometry('800x500')
-
-
-#Frame 1, Search label textbox and button
-frame1 = Frame(main_window)
+#Frame 1, Search label textbox and button. 
+# main_window is parent frame..Create a frame on it for the search label
+frame1 = Frame(main_window) #this frame is for the textbox search label and the button
 
 #adding label to search box
 Label(frame1,text='Search Recipes: ', font = (None, 10)).pack(side = LEFT)
@@ -140,35 +191,36 @@ enter_recipe.pack (side = LEFT)
 #search button button
 search_button = Button(frame1, text ='Search', command = print_similar_recipes) 
 search_button.pack(side=RIGHT)
-frame1.pack(side=LEFT)
 
-#for the title and picture
-frame3 = Frame(main_window)
+
+#frame3 for title and food picture
+frame3 = Frame(main_window) #this frame is for the listbox
 frame3.place(x = 200, y = 350)
+label_name = Label(frame3)
+label_pic = Label(frame3)
 
-#for ingredients, directions, cook time information
+#frame 4 for ingredients directions and cook time
 frame4 = Frame(main_window)
 frame4.place(x = 800, y = 250)
+label_title_name = Label(frame4, justify = 'right')
+label_content = Label(frame4)
 
-
-
+#frame 5 for buttons 
+frame5 = Frame(main_window)
+frame5.place(x = 550, y = 500)
+but_ing = Button(frame5)
+but_dir = Button(frame5)
 
 
 #fontsize
 fontStyle = tkFont.Font(family="Lucida Grande", size=10)
 fontStyle2 = tkFont.Font(size = 10)
- 
-#Put 'Search Recipe' inside search box
-'''edit.insert(0, "Find a Recipe:") '''
 
 
-
-
-
+#pack the frame on top
+frame1.pack(side = TOP)
 
 
 
 #keeps the app running
 main_window.mainloop()
-
-
