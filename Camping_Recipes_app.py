@@ -127,14 +127,33 @@ def print_similar_recipes():
                 #selected = list_box.get(ANCHOR)
                 idx = df[df['Recipe title'] == selected].index[0]
 
-                #ingredients
+                #directions 
                 directions = df['Directions'][idx]
                 label_title_name.config(text = 'DIRECTIONS', font = (None, 15), wraplength = 500)
                 label_title_name.pack(pady = 5)
                 label_content.config(text = directions, wraplength = 500, anchor = 'w', font = (None, 10))
                 label_content.pack(pady = 5)
 
-
+            def show_others():
+                
+                #selected = list_box.get(ANCHOR)
+                idx = df[df['Recipe title'] == selected].index[0]
+                
+                #get cook time prep time and serves
+                cook_time = df['Cook time'][idx]
+                prep_time = df['Prep time'][idx]
+                serves = df['Serves'][idx] #change serves # to Serves
+                
+                label_title_name.config(text = 'OTHER DETAILS', font = (None, 15), wraplength = 500)
+                label_title_name.pack(pady = 5)
+                #label_title_name.place(relx = 0.5, rely = 0)
+                
+                #TEXT
+                txt = 'Cook time: ' + str(cook_time) + ' minutes' +'\n\n' + 'Prep time: ' + str(prep_time) + ' minutes' + '\n\n' + 'Number of Serves: ' + str(serves) + ' people' + '\n' 
+                
+                label_content.config(text = txt, wraplength = 500, anchor = 'w', font = (None, 10))
+                label_content.pack(pady = 5)
+                #label_content.place(relx = 0.5, rely = 0.2)
                
             #ingredient button    
             but_ing.config(text = 'Ingredients', height = 1, width = 7, command = show_ingredients)
@@ -144,12 +163,16 @@ def print_similar_recipes():
             but_dir.config(text = 'Directions', height = 1, width = 7, command = show_directions)
             but_dir.pack(side = TOP)
 
+            #other button
+            but_other.config(text = 'Other details', height = 1, width = 7, command = show_others)
+            but_other.pack(side = TOP)
             
 
         except:
             #get rid of labels
             label_name.config(text = '')
             label_name.pack()
+            but_other.forget()
             
             #get rid of buttons
             but_ing.forget()
@@ -210,6 +233,7 @@ frame5 = Frame(main_window)
 frame5.place(x = 550, y = 500)
 but_ing = Button(frame5)
 but_dir = Button(frame5)
+but_other = Button(frame5)
 
 
 #fontsize
