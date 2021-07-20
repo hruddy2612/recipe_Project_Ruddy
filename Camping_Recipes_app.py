@@ -247,12 +247,12 @@ Label(frame6, justify = 'left', text = 'LUNCH \nChicken & Vegetable Kebobs\nFish
 
 #frame 8 Dinner list
 frame8 = Frame(main_window)
-frame8.place(x = 0, y = 200)
+frame8.place(x = 0, y = 100)
 Label(frame8, justify = 'left', text = 'DINNER \nChili\nMushroom Burger\nShrimp Boil Packets' ).pack(side=LEFT, padx = 20, pady = 0)
 
 #frame 9 Dessert list
 frame9 = Frame(main_window)
-frame9.place(x = 200, y = 200)
+frame9.place(x = 200, y = 100)
 Label(frame9, justify = 'left', text = 'DESSERT \nGrilled Peaches\nSmores' ).pack(side=LEFT, padx = 20, pady = 0)
 
 #fontsize
