@@ -28,10 +28,10 @@ def print_similar_recipes():
     
     #frame2, search results list box position on page
     frame2 = Frame(main_window) 
-    frame2.place(x = 625, y = 35)
+    frame2.place(x = 625, y = 80)
 
     #recipe search result list box size
-    search_results= Listbox(frame2, width = 50, height = 10)
+    search_results= Listbox(frame2, width = 30, height = 5)
     
     #get recipe name entered
     recipe = entered_recipe.get()
@@ -130,9 +130,9 @@ def print_similar_recipes():
                 #directions 
                 directions = df['Directions'][idx]
                 label_title_name.config(text = 'DIRECTIONS', font = (None, 15), wraplength = 500)
-                label_title_name.pack(pady = 5)
+                label_title_name.pack(pady = 5,)
                 label_content.config(text = directions, wraplength = 500, anchor = 'w', font = (None, 10))
-                label_content.pack(pady = 5)
+                label_content.pack(pady = 5,)
 
             def show_others():
                 
@@ -145,13 +145,13 @@ def print_similar_recipes():
                 serves = df['Serves'][idx] #change serves # to Serves
                 
                 label_title_name.config(text = 'OTHER DETAILS', font = (None, 15), wraplength = 500)
-                label_title_name.pack(pady = 5)
+                label_title_name.pack(pady = 5,)
                 #label_title_name.place(relx = 0.5, rely = 0)
                 
                 #TEXT
                 txt = 'Cook time: ' + str(cook_time) + ' minutes' +'\n\n' + 'Prep time: ' + str(prep_time) + ' minutes' + '\n\n' + 'Number of Serves: ' + str(serves) + ' people' + '\n' 
                 
-                label_content.config(text = txt, wraplength = 500, anchor = 'w', font = (None, 10))
+                label_content.config(text = txt, wraplength = 500, anchor = 'w', font = (None, 10), justify = 'left',)
                 label_content.pack(pady = 5)
                 #label_content.place(relx = 0.5, rely = 0.2)
                
@@ -225,8 +225,8 @@ label_pic = Label(frame3)
 #frame 4 for ingredients directions and cook time
 frame4 = Frame(main_window)
 frame4.place(x = 800, y = 250)
-label_title_name = Label(frame4, justify = 'right')
-label_content = Label(frame4)
+label_title_name = Label(frame4, justify = 'left')
+label_content = Label(frame4, justify = 'left')
 
 #frame 5 for buttons 
 frame5 = Frame(main_window)
@@ -261,7 +261,7 @@ fontStyle2 = tkFont.Font(size = 10)
 
 
 #pack the frame on top
-frame1.pack(side = TOP)
+frame1.pack(side = TOP, pady = 20)
 
 
 
