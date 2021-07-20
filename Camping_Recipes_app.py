@@ -235,6 +235,25 @@ but_ing = Button(frame5)
 but_dir = Button(frame5)
 but_other = Button(frame5)
 
+#frame 6 Breakfast list
+frame6 = Frame(main_window)
+frame6.place(x = 0, y = 0)
+Label(frame6, justify = 'left', text = 'BREAKFAST \nBreakfast Sandwich\nStrawberry French Toast' ).pack(side=LEFT, padx= 20, pady = 20)
+
+#frame 7 Lunch list
+frame6 = Frame(main_window)
+frame6.place(x = 200, y = 0)
+Label(frame6, justify = 'left', text = 'LUNCH \nChicken & Vegetable Kebobs\nFish Tacos\nKale Avocado Sandwich' ).pack(side=LEFT, padx = 20, pady = 20)
+
+#frame 8 Dinner list
+frame8 = Frame(main_window)
+frame8.place(x = 0, y = 200)
+Label(frame8, justify = 'left', text = 'DINNER \nChili\nMushroom Burger\nShrimp Boil Packets' ).pack(side=LEFT, padx = 20, pady = 0)
+
+#frame 9 Dessert list
+frame9 = Frame(main_window)
+frame9.place(x = 200, y = 200)
+Label(frame9, justify = 'left', text = 'DESSERT \nGrilled Peaches\nSmores' ).pack(side=LEFT, padx = 20, pady = 0)
 
 #fontsize
 fontStyle = tkFont.Font(family="Lucida Grande", size=10)
