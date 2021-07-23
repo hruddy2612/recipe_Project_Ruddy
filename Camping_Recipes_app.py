@@ -117,9 +117,9 @@ def print_similar_recipes():
                 #ingredients
                 ing = df['Ingredients'][idx]
                 label_title_name.config(text = 'INGREDIENTS', font = (None, 15))
-                label_title_name.pack(side = TOP)
-                label_content.config(text = ing, wraplength = 500, anchor = 'w', font = (None, 10))
-                label_content.pack(side = TOP, pady = 20, fill = 'both')
+                label_title_name.pack
+                label_content.config(text = ing, wraplength = 500, font = (None, 10))
+                label_content.pack
 
 
             def show_directions():
@@ -130,9 +130,9 @@ def print_similar_recipes():
                 #directions 
                 directions = df['Directions'][idx]
                 label_title_name.config(text = 'DIRECTIONS', font = (None, 15), wraplength = 500)
-                label_title_name.pack(pady = 5,)
-                label_content.config(text = directions, wraplength = 500, anchor = 'w', font = (None, 10))
-                label_content.pack(pady = 5,)
+                label_title_name.pack
+                label_content.config(text = directions, wraplength = 500, font = (None, 10))
+                label_content.pack
 
             def show_others():
                 
@@ -145,14 +145,14 @@ def print_similar_recipes():
                 serves = df['Serves'][idx] #change serves # to Serves
                 
                 label_title_name.config(text = 'OTHER DETAILS', font = (None, 15), wraplength = 500)
-                label_title_name.pack(pady = 5,)
-                #label_title_name.place(relx = 0.5, rely = 0)
+                label_title_name.pack 
+                #label_title_name.place(relx = 0, rely = 0)
                 
                 #TEXT
                 txt = 'Cook time: ' + str(cook_time) + ' minutes' +'\n\n' + 'Prep time: ' + str(prep_time) + ' minutes' + '\n\n' + 'Number of Serves: ' + str(serves) + ' people' + '\n' 
                 
                 label_content.config(text = txt, wraplength = 500, anchor = 'w', font = (None, 10), justify = 'left',)
-                label_content.pack(pady = 5)
+                label_content.pack
                 #label_content.place(relx = 0.5, rely = 0.2)
                
             #ingredient button    
@@ -235,7 +235,7 @@ but_ing = Button(frame5)
 but_dir = Button(frame5)
 but_other = Button(frame5)
 
-#frame 6 Breakfast list
+'''#frame 6 Breakfast list
 frame6 = Frame(main_window)
 frame6.place(x = 0, y = 0)
 Label(frame6, justify = 'left', text = 'BREAKFAST \nBreakfast Sandwich\nStrawberry French Toast' ).pack(side=LEFT, padx= 20, pady = 20)
@@ -253,7 +253,25 @@ Label(frame8, justify = 'left', text = 'DINNER \nChili\nMushroom Burger\nShrimp 
 #frame 9 Dessert list
 frame9 = Frame(main_window)
 frame9.place(x = 200, y = 100)
-Label(frame9, justify = 'left', text = 'DESSERT \nGrilled Peaches\nSmores' ).pack(side=LEFT, padx = 20, pady = 0)
+Label(frame9, justify = 'left', text = 'DESSERT \nGrilled Peaches\nSmores' ).pack(side=LEFT, padx = 20, pady = 0)'''
+
+# define new frame 10 and put text area and scroll bar in it
+textframe=Frame(main_window)
+textframe.place(x = 20, y = 20)   
+
+# create and pack the text area
+text=Text(textframe, height=20, width=40,wrap=WORD)
+text.pack(side=LEFT, fill=BOTH)
+
+# yview callback gets called when the scroll bar or its arrows are moved
+text_scroll=Scrollbar(textframe, command=text.yview)
+text_scroll.pack(side=RIGHT,fill=Y)
+
+# this connects changes in the scroll bar to changing the text area
+# i.e. the text area will show a smaller window into the full text
+text.configure(yscrollcommand=text_scroll.set)
+
+text.insert(END, "Available Recipes\n-----------------------------\nBREAKFAST\n\nBreakfast Sandwich\nStrawberry French Toast\nApple Cinnamon Pancakes\nApple Sweet Potato Hash\n\nLUNCH\n\nHalloumi Tacos\nGyro Kebob\nChicken & Vegetable Kebobs\nFish Tacos\nKale Avocado Sandwich\nCashew Chicken Wrap\nSummer Spring Rolls\nChili Mac\n\nDINNER\n\nLentil Sloppy Joes\nCilantro Lime Chicken Tacos\nGlazed Salmon\nChicken Pad Thai\nPumpkin Mac\nChili\nMushroom Burger\nShrimp Boil Packets\n\nDESSERT\n\nBlueberry Cobbler\nGrilled Peaches\nSmores\nAutumn Plum Skillet Tart\n\n")
 
 #fontsize
 fontStyle = tkFont.Font(family="Lucida Grande", size=10)
