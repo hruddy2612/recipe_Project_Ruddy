@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
 from tkinter import *
 
 import pandas as pd
@@ -279,8 +278,8 @@ fontStyle2 = tkFont.Font(size = 10)
 
 
 #pack the frame on top
-frame1.pack(side = TOP, pady = 20)
-
+#frame1.pack(side = TOP, pady = 20)
+frame1.place( x = 0, y = 300)
 
 
 #keeps the app running
