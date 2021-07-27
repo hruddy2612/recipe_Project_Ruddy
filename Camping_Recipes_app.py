@@ -27,7 +27,7 @@ def print_similar_recipes():
     
     #frame2, search results list box position on page
     frame2 = Frame(main_window) 
-    frame2.place(x = 625, y = 80)
+    frame2.place(x = 20, y = 350)
 
     #recipe search result list box size
     search_results= Listbox(frame2, width = 30, height = 5)
@@ -199,13 +199,18 @@ main_window.title('Camping Recipe App')
 frame1 = Frame(main_window) #this frame is for the textbox search label and the button
 
 #adding label to search box
-Label(frame1,text='Search Recipes: ', font = (None, 10)).pack(side = LEFT)
+Label(frame1, text = 'Search Recipes:', font = (None, 10)).pack(side = LEFT, padx = 10)
+
+
 
 #get the entry 
 entered_recipe = StringVar()
 
 #text box in frame1 next to search recipe (where recipe name is typed)
-enter_recipe = Entry(frame1, textvariable = entered_recipe)
+enter_recipe = Entry(frame1, width = 15, textvariable = entered_recipe)
+
+#'search recipes' is inside search bar
+#enter_recipe.insert(0, 'Search Recipe')
 
 #position text box
 enter_recipe.pack (side = LEFT)
@@ -217,7 +222,7 @@ search_button.pack(side=RIGHT)
 
 #frame3 for title and food picture
 frame3 = Frame(main_window) #this frame is for the listbox
-frame3.place(x = 200, y = 350)
+frame3.place(x = 450, y = 50)
 label_name = Label(frame3)
 label_pic = Label(frame3)
 
