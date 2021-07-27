@@ -191,6 +191,7 @@ def print_similar_recipes():
 main_window = Tk()
 main_window.geometry('1200x800')
 
+
 #title of main window
 main_window.title('Camping Recipe App')
 
@@ -200,7 +201,6 @@ frame1 = Frame(main_window) #this frame is for the textbox search label and the 
 
 #adding label to search box
 Label(frame1, text = 'Search Recipes:', font = (None, 10)).pack(side = LEFT, padx = 10)
-
 
 
 #get the entry 
