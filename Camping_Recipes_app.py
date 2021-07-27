@@ -189,7 +189,7 @@ def print_similar_recipes():
 
 #main window size and title
 main_window = Tk()
-main_window.geometry('800x500')
+main_window.geometry('1200x800')
 
 #title of main window
 main_window.title('Camping Recipe App')
@@ -222,19 +222,19 @@ search_button.pack(side=RIGHT)
 
 #frame3 for title and food picture
 frame3 = Frame(main_window) #this frame is for the listbox
-frame3.place(x = 450, y = 50)
+frame3.place(x = 450, y = 30)
 label_name = Label(frame3)
 label_pic = Label(frame3)
 
 #frame 4 for ingredients directions and cook time
 frame4 = Frame(main_window)
-frame4.place(x = 800, y = 250)
+frame4.place(x = 450, y = 300)
 label_title_name = Label(frame4, justify = 'left')
 label_content = Label(frame4, justify = 'left')
 
 #frame 5 for buttons 
 frame5 = Frame(main_window)
-frame5.place(x = 550, y = 500)
+frame5.place(x = 780, y = 200)
 but_ing = Button(frame5)
 but_dir = Button(frame5)
 but_other = Button(frame5)
@@ -262,6 +262,7 @@ Label(frame9, justify = 'left', text = 'DESSERT \nGrilled Peaches\nSmores' ).pac
 # define new frame 10 and put text area and scroll bar in it
 textframe=Frame(main_window)
 textframe.place(x = 20, y = 20)   
+
 
 # create and pack the text area
 text=Text(textframe, height=20, width=40,wrap=WORD)
