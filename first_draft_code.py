@@ -81,7 +81,7 @@ print_recipe()
 # Main
 
 #import CSV file to pandas (make sure excell is in csv format)
-df = pd.read_csv ("/Users/heatherruddy/Documents/GitHub/recipe_Project_Ruddy/recipe2.csv")
+df = pd.read_csv ("/Users/heatherruddy/Documents/GitHub/recipe_Project_Ruddy/main_files/recipe2.csv")
 
 #print 5 rows of data
 df.head(5)

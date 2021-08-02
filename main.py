@@ -17,7 +17,7 @@ from PIL import ImageTk, Image
 working_directory = os.getcwd()
 
 #import the pandas dataframe
-df = pd.read_csv(working_directory + '//recipe2.csv')
+df = pd.read_csv(working_directory + '/recipe2.csv')
 
 
 #Functions#
