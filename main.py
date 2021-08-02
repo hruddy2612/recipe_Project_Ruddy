@@ -17,7 +17,7 @@ from PIL import ImageTk, Image
 working_directory = os.getcwd()
 
 #import the pandas dataframe
-df = pd.read_csv(working_directory + '/recipe2.csv')
+df = pd.read_csv(working_directory + '/images/recipe2.csv')
 
 
 #Functions#
@@ -97,8 +97,9 @@ def print_similar_recipes():
             #picture
             pic = df['Picture Name'][idx]
             
-            im = Image.open(working_directory + '//' + str(pic))
+            im = Image.open(working_directory + '/images/' + str(pic))
             
+
             im = im.resize((300, 200))
             
             main_window.im = ImageTk.PhotoImage(im)
