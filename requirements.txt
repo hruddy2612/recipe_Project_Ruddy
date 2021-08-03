@@ -1,0 +1,3 @@
+# you need the following non-standard packages to run my main.py 
+#to install them, type this into your console:
+#pip -r requirements.txt
