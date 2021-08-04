@@ -42,3 +42,11 @@ Limitations include:
 grid placement. 
 1. user input is limited to key words that are contained within the list of recipes
 if a word is misspelled or not a match, an error code will appear
+
+_**Images**_
+================
+1. Image shows a user searching for a keyword and the search results that appear 
+1. Image shows what happens when a user's input is invalid and the error code that appears
+1. image shows what appears, when a user selects a recipe
+1. image shows what appears when a user clicks on the right hand buttons to pull up ingredients, directions or other details
+1. image shows what happens if a new recipe is selected. Old recipe information is cleared and replaced with a new recipe
