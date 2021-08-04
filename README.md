@@ -49,18 +49,18 @@ _**Images**_
 
 1. Shows a user searching for a keyword and the search results that appear 
 
-[Screenshot](doc/error_code.png) 
+![Screenshot](doc/error_code.png) 
 
 1. Shows what happens when a user's input is invalid and the error code that appears
 
-[Screenshot](doc/select_recipe.png) 
+![Screenshot](doc/select_recipe.png) 
 
 1. Shows what appears, when a user selects a recipe
 
-[Screenshot](doc/recipe_dir.png) 
+![Screenshot](doc/recipe_dir.png) 
 
 1. Shows what appears when a user clicks on the right hand buttons to pull up ingredients, directions or other details
 
-[Screenshot](doc/new_recipe.png) 
+![Screenshot](doc/new_recipe.png) 
 
 1. Shows what happens if a new recipe is selected. Old recipe information is cleared and replaced with a new recipe. 
