@@ -20,7 +20,18 @@ df = pd.read_csv(working_directory + '/images/recipe2.csv')
 
 
 def print_similar_recipes():
-    
+    '''compares user input to recipes listed in database to produce resulting string
+    Arg: 
+        inp = user input (must be a string)
+        un_recipe = compares user input to recipe database, string must be >0 
+    Returns: 
+        one string per unique word from user input
+        
+    Raises:
+        raises an error (Recipe Not Found. Type a different recipe.) if inp <= 0 or 
+        invalid characters were used for inp '''
+
+
     #frame2, search results list box position on page
     frame2 = Frame(main_window) 
     frame2.place(x = 20, y = 350)
@@ -70,8 +81,26 @@ def print_similar_recipes():
     
 
 
-  #print stuff if selected
+  #print recipe information (photo, title) if a recipe is selected
     def show_selected():
+
+        '''Clears information from previous recipe being displayed
+         to show a new recipe title and photo
+
+        Arg:
+            Indexes name of recipe from user input in database to find
+             recipe title and matching image (input must be a string >0)
+        
+        Returns:
+            user input as a string for the recipe title and places 
+            image on the screen as the correct size 
+        
+        Raises: 
+            if one aspect is unable to print, nothing else will 
+            print, no error code is shown
+            '''
+        #TODO if one aspect of this code does not print for this function, there should
+        #  be an error stating "no image available"
         
         #get the selected name
         selected = search_results.get(ANCHOR)
@@ -104,6 +133,19 @@ def print_similar_recipes():
             label_pic.pack(pady = 20, side = TOP)
             
             def show_ingredients():
+                '''this displays the ingredients for each recipe
+                Arg: 
+                    this indexes the recipe title and matches 
+                    title with the correct ingredients from the 
+                    database (user input must be a string > 0)
+
+                Returns:
+                    displays ingredients information as a string
+
+                Raises: 
+                    if error occurs, no button appears
+                    '''
+                    
 
                 #selected = list_box.get(ANCHOR)    
 
@@ -119,6 +161,18 @@ def print_similar_recipes():
 
 
             def show_directions():
+                '''this displays the directions for each recipe
+                Arg: 
+                    this indexes the recipe title and matches 
+                    title with the correct directions from the 
+                    database (user input must be a string > 0)
+
+                Returns:
+                    displays directions information as a string
+
+                Raises: 
+                    if error occurs, no button appears
+                    '''
 
                 #selected = list_box.get(ANCHOR)
                 idx = df[df['Recipe title'] == selected].index[0]
@@ -131,7 +185,22 @@ def print_similar_recipes():
                 label_content.pack
 
             def show_others():
-                
+
+                '''this displays the other details for each recipe
+                Arg: 
+                    this indexes the recipe title and matches 
+                    title with the correct other details from the 
+                    database (user input must be a string > 0)
+
+                Returns:
+                    displays other details information as a string
+
+                Raises: 
+                    if error occurs, no button appears
+                    '''   
+                #TODO add an error code, one of show_ingredients, show_directions or _show_others
+                # do not display correctly
+
                 #selected = list_box.get(ANCHOR)
                 idx = df[df['Recipe title'] == selected].index[0]
                 
