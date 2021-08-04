@@ -20,10 +20,12 @@ df = pd.read_csv(working_directory + '/images/recipe2.csv')
 
 
 def print_similar_recipes():
-    '''compares user input to recipes listed in database to produce resulting string
+    '''compares user input to recipes listed in database to produce resulting
+     string and is used as command for the search button
     Arg: 
         inp = user input (must be a string)
         un_recipe = compares user input to recipe database, string must be >0 
+        search button = executes print_similar_recipes when clicked
     Returns: 
         one string per unique word from user input
         
