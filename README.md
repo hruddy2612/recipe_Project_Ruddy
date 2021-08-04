@@ -45,7 +45,7 @@ if a word is misspelled or not a match, an error code will appear
 
 _**Images**_
 ================
-1. Image ![alt text](/search_results.png) shows a user searching for a keyword and the search results that appear 
+1. Image ![What is this](search_results.png) shows a user searching for a keyword and the search results that appear 
 1. Image shows what happens when a user's input is invalid and the error code that appears
 1. image shows what appears, when a user selects a recipe
 1. image shows what appears when a user clicks on the right hand buttons to pull up ingredients, directions or other details
