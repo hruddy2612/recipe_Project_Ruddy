@@ -1,0 +1,84 @@
+Overview
+===========
+This app lists recipes for camping meals and is categorized into breakfast, lunch, 
+dinner, and desserts. Users can view recipes by meal category and then use a search 
+bar to search a specific meal or keyword they are interested in. This has directions 
+for cooking over the fire and directions for how some meals or parts of meals can be 
+prepped at home. 
+
+Users would be anyone who wants non-typical meals for their camping trips. 
+Users would gain knowledge for new meals to make while camping. It could help 
+alleviate the stress of having to create new meal ideas on their own. 
+
+Condensed Specs
+=================
+Users could:
+search for recipes
+select a recipe from a list to view prep time, ingredients, and directions
+users could view photos of finished dish 	
+
+Features:
+View recipes by category
+Search for recipes based on keyword
+View photos of recipes
+select a recipe to view prep time, ingredients, and directions
+
+Input would be a user searching for a specific recipe they were interested in making.
+Results would be presented as a string with an image
+
+User Interaction Flow
+========================
+1.The user opens the app, wanting to find a recipe. The app opens to the 
+correct size, so users do not need to resize it for all of the information 
+to be in view. Users are able to look through all of the recipes based on category. 
+
+2.If a user  finds a recipe they like, they can search by the recipe or a keyword. After 
+typing a valid keyword/recipe, they click ‘search’ and a list of potential matches appears. 
+They choose a recipe they want to view and click the ‘show recipe’ button. There are three 
+buttons to the left of the recipe photo and title where users can choose to see more 
+pertinent information about the recipe. 
+[Screenshot](doc/error_code.png) 
+
+3.If a user tries to search for a recipe that is not valid or they click search without 
+typing in anything, they will get a n error message and be prompted to search again.  
+
+Screen shots of this flow are available in the README.md file 
+
+Flow of Code
+==============
+When a user types a recipe and clicks the search button they are running through 
+the print_similar_recipes function. This function compares user input to recipes 
+listed in the database of recipes to produce a resulting string or stings. This produces 
+unique recipe titles. If someone searches ‘fish taco’, that is compared to the database 
+and only produces one result as fish taco. 
+
+This function also contains the command for 
+the search button. When the search button is clicked, this function runs. 
+
+When a user selects a specific recipe from the resulting list, and clicks ‘show recipe’,
+show_selected, the show_selected function runs. This indexes what recipe was selected 
+in the database and pulls the matching title and image to display. It also pulls the 
+ingredients, directions, and other details and shows them when the correct button is 
+clicked. Show_selected also clears previous information and replaces it with new recipe
+information if another recipe is selected. 
+
+Show_ingredients, show_directions, show_others functions all run when the coordinating 
+button is selected. 
+
+Known Issues
+==============
+Print_similar_recipes function could have a better way to match user input to the database.
+The current function is a problem, because if you use too many letters the function will 
+think there is not a match. For example, if someone searches macaroni, they will get an 
+error code because the recipes listed only say mac. 
+The current function is okay at this point, but if the database were larger, it would be 
+challenging to have to look through all of the recipes to ensure you’re searching for something
+that exists. 
+Another inefficiency is it would be nice to have the option to click on a recipe in the list
+of recipes to search from there, or filtering recipes by category so a user could just look 
+at breakfast recipes would be more user friendly. 
+
+Future Work
+==============
+This project could be expanded to offer a way for users to save recipes they liked. It could 
+also offer user reviews and be a multi user app rather than just a single user app. 
