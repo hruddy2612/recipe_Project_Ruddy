@@ -40,4 +40,3 @@ Limitations include:
 1. number of recipes in the csv, searching for recipes is limited due to the way the code matches the input with the database
 1. placement of widgets in tkinter is limited due to grid not being compatible with pack, so pack and place were used over 
 grid placement. 
-
