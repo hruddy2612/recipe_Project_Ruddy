@@ -1,3 +1,8 @@
 # you need the following non-standard packages to run my main.py 
 #to install them, type this into your console:
 #pip -r requirements.txt
+
+#required prerequisites for Camping Recipies App
+
+pylance # version v2021.7.7 was used
+pillows #use newest version
