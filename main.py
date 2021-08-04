@@ -2,7 +2,6 @@
 # coding: utf-8
 
 from tkinter import *
-
 import pandas as pd
 import numpy as np
 import os
@@ -16,7 +15,7 @@ working_directory = os.getcwd()
 df = pd.read_csv(working_directory + '/images/recipe2.csv')
 
 
-#Functions#
+##Functions##
 
 
 def print_similar_recipes():
@@ -122,16 +121,11 @@ def print_similar_recipes():
             label_name.config(text = str(selected), font = (None, 20))
             label_name.pack(side = TOP)
 
-            #picture
+            #picture configuration
             pic = df['Picture Name'][idx]
-            
             im = Image.open(working_directory + '/images/' + str(pic))
-            
-
             im = im.resize((300, 200))
-            
             main_window.im = ImageTk.PhotoImage(im)
-            
             label_pic.configure(image = main_window.im)
             label_pic.pack(pady = 20, side = TOP)
             
@@ -155,7 +149,7 @@ def print_similar_recipes():
                 #get the dataframe index
                 idx = df[df['Recipe title'] == selected].index[0]
 
-                #ingredients
+                #ingredient configuration 
                 ing = df['Ingredients'][idx]
                 label_title_name.config(text = 'INGREDIENTS', font = (None, 15))
                 label_title_name.pack
@@ -180,7 +174,7 @@ def print_similar_recipes():
                 #selected = list_box.get(ANCHOR)
                 idx = df[df['Recipe title'] == selected].index[0]
 
-                #directions 
+                #direction configuration 
                 directions = df['Directions'][idx]
                 label_title_name.config(text = 'DIRECTIONS', font = (None, 15), wraplength = 500)
                 label_title_name.pack
@@ -211,14 +205,12 @@ def print_similar_recipes():
                 cook_time = df['Cook time'][idx]
                 prep_time = df['Prep time'][idx]
                 serves = df['Serves'][idx] #change serves # to Serves
-                
                 label_title_name.config(text = 'OTHER DETAILS', font = (None, 15), wraplength = 500)
                 label_title_name.pack 
                 #label_title_name.place(relx = 0, rely = 0)
                 
-                #TEXT
+                #Text labels
                 txt = 'Cook time: ' + str(cook_time) + ' minutes' +'\n\n' + 'Prep time: ' + str(prep_time) + ' minutes' + '\n\n' + 'Number of Serves: ' + str(serves) + ' people' + '\n' 
-                
                 label_content.config(text = txt, wraplength = 500, anchor = 'w', font = (None, 10), justify = 'left',)
                 label_content.pack
                 #label_content.place(relx = 0.5, rely = 0.2)
@@ -251,7 +243,6 @@ def print_similar_recipes():
             label_title_name.pack()
             label_content.config(text = '')
             label_content.pack()
-            
             label_pic.forget()            
     
     Button(frame2, text = 'Show recipe', command = show_selected).pack(side = BOTTOM)  
@@ -270,7 +261,6 @@ frame1 = Frame(main_window) #this frame is for the textbox search label and the 
 
 #adding label to search box
 Label(frame1, text = 'Search Recipes:', font = (None, 10)).pack(side = LEFT, padx = 10)
-
 
 #get the entry 
 entered_recipe = StringVar()
