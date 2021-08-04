@@ -45,17 +45,18 @@ if a word is misspelled or not a match, an error code will appear
 
 _**Images**_
 ================
+1. Shows a user searching for a keyword and the search results that appear
 [Screenshot](doc/search_results.png) 
-1. Shows a user searching for a keyword and the search results that appear 
-
-[Screenshot](doc/error_code.png) 
+ 
 1. Shows what happens when a user's input is invalid and the error code that appears
+[Screenshot](doc/error_code.png) 
 
-[Screenshot](doc/select_recipe.png) 
 1. Shows what appears, when a user selects a recipe
+[Screenshot](doc/select_recipe.png) 
 
-[Screenshot](doc/recipe_dir.png) 
 1. Shows what appears when a user clicks on the right hand buttons to pull up ingredients, directions or other details
+[Screenshot](doc/recipe_dir.png) 
 
+1. Shows what happens if a new recipe is selected. Old recipe information is cleared and replaced with a new recipe.
 [Screenshot](doc/new_recipe.png) 
-1. Shows what happens if a new recipe is selected. Old recipe information is cleared and replaced with a new recipe. 
+ 
