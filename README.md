@@ -30,7 +30,7 @@ _**Usage**_
 ``main.py`` run it in the project root folder
 
 ``images folder`` images and csv file must be in the same file for GUI to run properly, if 
-the location of this file changes, the file source must also be changed in the code
+the location of this file changes, the file source must also be changed in the code. the images folder is required to run main.py
 
 _**Known issues**_
 ====================
@@ -40,3 +40,5 @@ Limitations include:
 1. number of recipes in the csv, searching for recipes is limited due to the way the code matches the input with the database
 1. placement of widgets in tkinter is limited due to grid not being compatible with pack, so pack and place were used over 
 grid placement. 
+1. user input is limited to key words that are contained within the list of recipes
+if a word is misspelled or not a match, an error code will appear

@@ -87,7 +87,8 @@ def print_similar_recipes():
     def show_selected():
 
         '''Clears information from previous recipe being displayed
-         to show a new recipe title and photo
+         to show a new recipe title and photo, this also shows the
+          buttons for ingredients, directions, and other details
 
         Arg:
             Indexes name of recipe from user input in database to find
